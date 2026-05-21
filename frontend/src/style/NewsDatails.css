@@ -1,0 +1,222 @@
+/* ════════════════════════════════════════
+   DETALHE DE NOTÍCIA — NoticiaDetalhe.css
+════════════════════════════════════════ */
+
+/* ── Imagem de capa ── */
+.detalhe-capa {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.detalhe-capa-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.detalhe-capa-sobreposicao {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+}
+
+/* ── Área principal ── */
+.detalhe-area-principal {
+  background-color: #f8fafc;
+  padding: 48px 40px 64px;
+}
+
+.detalhe-interior {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Link de voltar */
+.detalhe-voltar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+
+.detalhe-voltar-link:hover {
+  color: #10b981;
+}
+
+/* Meta: categoria + data */
+.detalhe-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.detalhe-categoria {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.detalhe-data {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Título principal */
+.detalhe-titulo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin: 0 0 20px;
+}
+
+/* Resumo em destaque */
+.detalhe-resumo-destaque {
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0;
+}
+
+/* Separador */
+.detalhe-separador {
+  border: none;
+  border-top: 1.5px solid #e2e8f0;
+  margin: 32px 0;
+}
+
+/* Corpo do artigo */
+.detalhe-conteudo p {
+  color: #334155;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin: 0 0 24px;
+}
+
+/* ── Notícias relacionadas ── */
+.detalhe-relacionadas-area {
+  background-color: #ffffff;
+  padding: 48px 40px 60px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.detalhe-relacionadas-interior {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detalhe-relacionadas-titulo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 28px;
+}
+
+.detalhe-relacionadas-grelha {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.detalhe-cartao-relacionado {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f8fafc;
+}
+
+.detalhe-cartao-relacionado:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.detalhe-cartao-relacionado img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.detalhe-cartao-relacionado-texto {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detalhe-cartao-data {
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+.detalhe-cartao-relacionado-texto h3 {
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.detalhe-cartao-ler {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #10b981;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Estado não encontrado */
+.detalhe-nao-encontrado {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #64748b;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 768px) {
+  .detalhe-capa {
+    height: 260px;
+  }
+
+  .detalhe-area-principal,
+  .detalhe-relacionadas-area {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .detalhe-titulo {
+    font-size: 1.6rem;
+  }
+
+  .detalhe-relacionadas-grelha {
+    grid-template-columns: 1fr;
+  }
+}

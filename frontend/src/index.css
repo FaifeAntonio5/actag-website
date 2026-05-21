@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores Primárias - Baseadas no header, footer e notícias */
+  --primary-green: #10b981;
+  --primary-green-dark: #059669;
+  --primary-green-deep: #047d61;
+  --primary-green-darker: #065240;
+  
+  /* Cores Secundárias */
+  --secondary-blue: #0084D1;
+  --secondary-orange: #E17100;
+  --secondary-gray: #777F8B;
+  
+  /* Cores de Fundo */
+  --bg-white: #FFFFFF;
+  --bg-light: #F8FAFC;
+  --bg-gray-light: #f8fafc;
+  --bg-gray-soft: #f1f5f9;
+  --bg-dark: #0F172A;
+  --bg-footer: #052c1e;
+  --bg-hero-overlay: rgba(0,0,0,0.7);
+  --bg-hero-sobre-overlay: rgba(0,0,0,0.65);
+  
+  /* Cores de Texto */
+  --text-primary: #0f172a;
+  --text-secondary: #1e2937;
+  --text-tertiary: #334155;
+  --text-light: #475569;
+  --text-lighter: #64748b;
+  --text-gray: #777F8B;
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+  --text-dark-footer: #cbd5e1;
+  --text-footer-muted: #94a3b8;
+  
+  /* Cores de Borda e Separadores */
+  --border-light: #e2e8f0;
+  --border-soft: #f1f5f9;
+  
+  /* Cores de Destaque e Ícones */
+  --accent-green-light: #ecfdf5;
+  --accent-green-soft: #f0fdf4;
+  --accent-success: #009966;
+  --accent-warning: #ef4444;
+  
+  /* Cores de Card e Componentes */
+  --card-bg: #FFFFFF;
+  --card-shadow: rgba(0,0,0,0.08);
+  --card-shadow-hover: rgba(0,0,0,0.12);
+  
+  /* Cores de Estado */
+  --hover-light: rgba(255,255,255,0.1);
+  --focus-ring: rgba(16,185,129,0.1);
+  
+}
+
+body {
+  background-color: #eeee;
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}

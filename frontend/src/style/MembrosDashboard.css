@@ -1,0 +1,327 @@
+/* ==========================================================================
+   PAINEL DE GESTÃO DE MEMBROS — MembrosDashboard.css
+   ========================================================================== */
+
+/* ── Customizações para a Grelha de Membros ── */
+.membros-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 24px;
+  padding: 24px 0;
+}
+
+/* ── Cartão do Membro ── */
+.cartao-membro {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cartao-membro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Topo do Cartão (Avatar e Nome) */
+.membro-perfil-bloco {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.membro-avatar-generico {
+  width: 44px;
+  height: 44px;
+  background-color: #f1f5f9;
+  color: #64748b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.membro-dados-principais h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.membro-identificador {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Linha divisória */
+.membro-divisor {
+  border: none;
+  border-top: 1px solid #f1f5f9;
+  margin: 0;
+}
+
+/* Corpo de Informações */
+.membro-info-detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.membro-linha-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.membro-linha-info strong {
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Rodapé do Cartão */
+.membro-rodape-status {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 4px;
+}
+
+/* Etiquetas de Status Customizadas (Padrão .editor-etiqueta) */
+.status-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.status-badge.activo {
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.status-badge.pendente {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.membro-data-registo {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   ── JANELA MODAL (FORMULÁRIO SUSPENSO) — Alinhado com o Editor ──
+   ========================================================================== */
+
+/* Fundo Desfocado/Escurecido */
+.modal-sobreposicao {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Caixa de Diálogo do Modal */
+.modal-conteudo-caixa {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Topo do Modal (Substituído o fundo escuro pelo padrão clean do editor) */
+.modal-cabecalho-topo {
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.modal-cabecalho-topo h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Botão Fechar Redondo do Editor */
+.modal-botao-fechar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  font-size: 0.95rem;
+  padding: 0;
+}
+
+.modal-botao-fechar:hover {
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* Corpo do Formulário */
+.modal-formulario-corpo {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Grupos de Input */
+.form-grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-grupo-campo label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.form-grupo-campo input,
+.form-grupo-campo select {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-size: 0.875rem;
+  color: #0f172a;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form-grupo-campo input:focus,
+.form-grupo-campo select:focus {
+  border-color: #10b981;
+  box-shadow: none; /* Removido o glow antigo para combinar com o input do editor */
+}
+
+/* Alertas de Erro dentro do Modal */
+.modal-alerta-erro {
+  background-color: #fef2f2;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #fecaca;
+}
+
+/* Área de Botões (Ações) */
+.modal-acoes-rodape {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Botões baseados no padrão .editor-btn-novo e .editor-modal-fechar */
+.btn-secundario {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secundario:hover {
+  border-color: #94a3b8;
+  color: #0f172a;
+  background-color: #f8fafc;
+}
+
+/* Botão de Sucesso idêntico ao .editor-modal-guardar */
+.btn-sucesso {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: #10b981;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: background-color 0.2s;
+}
+
+.btn-sucesso:hover:not(:disabled) {
+  background-color: #059669;
+}
+
+.btn-sucesso:disabled {
+  background-color: #d1fae5;
+  color: #6ee7b7;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   ── ANIMAÇÕES ──
+   ========================================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,470 @@
+.hero {
+  height: 60vh;
+  background: url('../assets/img/imagenHero.jpg') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-hero-overlay);
+}
+
+.hero-content {
+  position: relative;
+  color: var(--text-white);
+  text-align: center;
+}
+
+.hero-content h1{
+  font-size: 5rem;
+  color: var(--primary-green)
+}
+
+.hero-content p{
+  color: var(--text-lighter);
+  font-size: 1.4rem;
+  font-style: normal;
+}
+
+.hero-content button {
+  background-color: var(--primary-green-darker);
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.hero-content button:hover{
+  background-color: var(--primary-green-deep);
+  transform: translateX(2px);
+}
+
+.seta {
+  font-size: 30px;
+}
+
+/*Secao 2*/
+.performance {
+  background-color: var(--bg-white);
+  padding: 80px 20px; 
+  min-height: 70vh;
+  text-align: center;
+}
+
+.performance h1 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.section-description {
+  max-width: 800px;
+  margin: 0 auto 50px; 
+  color: var(--text-gray);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.performance-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1500px;
+  margin: 0 auto;  
+}
+
+.performance-container .card {
+  background-color: var(--bg-light);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+.performance-container .card:hover {
+  transform: translateY(-10px);
+}
+
+/* Estilo dos Ícones */
+.icon-box {
+  background-color: var(--accent-green-light);
+  color: var(--primary-green);
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon-box svg {
+  width: 35px;
+  height: 35px;
+}
+
+.performance-container h3 {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.performance-container p {
+  color: var(--text-gray);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/** SEÇÃO DE MISSÃO, VISÃO E VALOR (PARTE ALTERADA PARA RESPONSIVIDADE) **/
+.mission {
+  background-color: var(--bg-light);        
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;             
+}
+
+.mission h1 {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--text-primary);
+  margin-bottom: 50px;
+}
+
+.mission-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mission-container .card1 {
+  background-color: var(--bg-light);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--card-shadow);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mission-container h3 {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.mission-container p {
+  color: var(--text-secondary);
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+.card1 ul {
+  list-style: none;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 5px;
+}
+
+.card1 li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.card1 li::before {
+  content: "•";
+  color: var(--accent-success);
+  position: absolute;
+  left: 0;
+}
+
+.icon-box1 {
+  background-color: var(--primary-green);
+  color: var(--text-white);
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon-box2 {
+  background-color: var(--secondary-blue);
+  color: var(--text-white);
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon-box3 {
+  background-color: var(--secondary-orange);
+  color: var(--text-white);
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+/** FIM DA PARTE ALTERADA **/
+
+/*Secao de parceiros*/
+.partners {
+  min-height: 40vh;
+}
+
+.partners h1{
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--text-primary);
+  margin: 10px 50px;
+  
+}
+
+.partners h4{
+  text-align: center;
+  color: var(--primary-green);
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+/* secao de noticias */ 
+.news {
+  min-height: 50vh;
+  background-color: var(--bg-white);
+  padding: 10px 150px 40px;
+  margin-left: 70px;
+}
+
+.news h1 {
+  font-size: 2.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.news h4{
+  color: var(--primary-green-dark);
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.all-news {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.all-news p {
+  font-style: italic;
+  color: #62748E;
+  font-size: 1.2rem;
+}
+
+.access-all-news {
+  background-color: var(--bg-white);
+  border: none;
+  text-decoration: none;
+  color: var(--primary-green-darker);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1500px;
+  margin: 0 auto; 
+}
+
+.news-card {
+  background-color: var(--bg-white);
+  box-shadow: 0 20px 30px var(--card-shadow);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.news-card img{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.news-card:hover img {
+  transform: scale(1.05);
+}
+
+.news-card-body {
+  padding: 20px;
+}
+
+.news-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.news-card p {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 25px;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #10b981;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.read-more span {
+  transition: transform 0.3s ease;
+}
+
+.read-more:hover span {
+  transform: translateX(5px);
+}
+
+.read-more:hover {
+  color: #059669;
+}
+
+/* ====================== RESPONSIVIDADE MELHORADA ====================== */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3.8rem;
+  }
+  
+  .news {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 55vh;
+    min-height: 400px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.15rem;
+    padding: 0 20px;
+  }
+  
+  .hero-content button {
+    font-size: 18px;
+    padding: 16px 28px;
+  }
+
+  .performance, 
+  .mission {
+    padding: 60px 20px;
+    min-height: auto;
+  }
+
+  .performance h1,
+  .mission h1,
+  .news h1,
+  .partners h1 {
+    font-size: 2.1rem;
+  }
+
+  .performance-container .card,
+  .mission-container .card1 {
+    padding: 30px 20px;
+  }
+
+  .icon-box {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .icon-box svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .news {
+    padding: 40px 20px;
+  }
+
+  .see-all {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .news-card img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .performance-container .card,
+  .mission-container .card1,
+  .news-card {
+    margin-bottom: 25px;
+  }
+
+  .news-card img {
+    height: 240px;
+  }
+
+  .mission h1 {
+    margin: 40px 0 40px 0;
+  }
+}

@@ -1,0 +1,422 @@
+/* ════════════════════════════════════════
+   PÁGINA DE PROJETOS — Projetos.css
+   Alinhado com a identidade Galeria/ACTAG
+════════════════════════════════════════ */
+
+.projetos-pagina {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* ── Cabeçalho (Mesmo efeito Glow Radial) ── */
+.projetos-cabecalho {
+  background-color: #0f172a;
+  padding: 80px 40px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.projetos-cabecalho::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 40% 50%, rgba(16,185,129,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.projetos-cabecalho-conteudo {
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.projetos-etiqueta {
+  display: inline-block;
+  color: #10b981;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.projetos-cabecalho h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+
+.projetos-cabecalho p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Área de Filtros e Pesquisa Estilo Clean ── */
+.projetos-filtros-area {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.projetos-filtros-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .projetos-filtros-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Barra de Pesquisa */
+.busca-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 4px 6px 4px 16px;
+  flex: 1;
+  max-width: 500px;
+  transition: border-color 0.2s;
+}
+
+.busca-input-wrapper:focus-within {
+  border-color: #10b981;
+}
+
+.busca-icone {
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.busca-input {
+  border: none;
+  background: transparent;
+  padding: 8px 0;
+  width: 100%;
+  outline: none;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.btn-pesquisar {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-pesquisar:hover {
+  background-color: #059669;
+}
+
+/* Seletores Dropdown */
+.selects-wrapper {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.select-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 0 16px;
+  height: 42px;
+  transition: border-color 0.2s;
+}
+
+.select-box:hover, .select-box:focus-within {
+  border-color: #10b981;
+}
+
+.select-icone {
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.select-box select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  padding-right: 8px;
+}
+
+/* ── Corpo e Grelha de Artigos/Projetos ── */
+.projetos-corpo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 60px;
+}
+
+.projetos-grelha {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Cartões de Projeto (Inspirado no .galeria-blog-cartao) */
+.projeto-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f1f5f9;
+}
+
+.projeto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+}
+
+/* Topo do Card */
+.card-topo {
+  padding: 22px 22px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.projeto-categoria {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f0fdf4;
+  color: #166534;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Badges de Estado Customizadas */
+.projeto-status-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-planeado {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.badge-curso {
+  background-color: #fffbeb;
+  color: #b45309; /* Tom de aviso/andamento suave */
+}
+
+.badge-concluido {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+/* Conteúdo do Card */
+.card-conteudo {
+  padding: 0 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projeto-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.projeto-descricao {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  flex: 1;
+}
+
+/* Lista de Metadados/Detalhes */
+.projeto-detalhes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  margin-top: auto;
+}
+
+.detalhe-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.detalhe-icone {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.detalhe-icone.verde {
+  color: #10b981;
+}
+
+.detalhe-icone.amarelo {
+  color: #f59e0b;
+}
+
+/* ── Barras de Progresso Integradas com o Verde Emerald ── */
+.projeto-progresso-container {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.progresso-texto {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.progresso-barra-fundo {
+  width: 100%;
+  height: 6px;
+  background-color: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progresso-barra-preenchida {
+  height: 100%;
+  background-color: #10b981;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+/* ── Estados Especiais da Tela (Loading / Erros) ── */
+.projetos-estado-tela {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  color: #64748b;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.projetos-spinner {
+  animation: spin 1s linear infinite;
+  color: #10b981;
+}
+
+.erro-caixa {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid #fed7d7;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.btn-recarregar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-recarregar:hover {
+  background-color: #10b981;
+}
+
+.texto-mutado {
+  color: #94a3b8;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsivo (Sincronizado perfeitamente com Galeria.css) ── */
+@media (max-width: 900px) {
+  .projetos-grelha {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .projetos-cabecalho,
+  .projetos-corpo {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .projetos-filtros-area {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projetos-grelha {
+    grid-template-columns: 1fr;
+  }
+
+  .projetos-cabecalho h1 {
+    font-size: 2.2rem;
+  }
+  
+  .selects-wrapper {
+    width: 100%;
+  }
+  
+  .select-box {
+    flex: 1;
+    min-width: 140px;
+  }
+}

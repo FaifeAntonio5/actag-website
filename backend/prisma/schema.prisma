@@ -1,0 +1,164 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id       Int      @id @default(autoincrement())
+  nome     String
+  email    String   @unique
+  senha    String
+  papel    String   @default("admin") // "admin" ou "editor"
+  criadoEm DateTime @default(now())
+}
+
+model Membro {
+  id       Int      @id @default(autoincrement())
+  nome     String
+  email    String   @unique
+  cargo    String
+  status   String   @default("Pendente")
+  criadoEm DateTime @default(now())
+
+  projectos ProjectoMembro[]
+}
+
+model Voluntario {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String   @unique
+  projecto  String
+  status    String   @default("Em Espera")
+  criadoEm  DateTime @default(now())
+}
+
+model Contacto {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String
+  assunto   String
+  mensagem  String
+  criadoEm  DateTime @default(now())
+}
+
+model Doador {
+  id       Int      @id @default(autoincrement())
+  nome     String
+  email    String   @unique
+  tipo     String
+  criadoEm DateTime @default(now())
+  doacoes  Doacao[]
+}
+
+model Doacao {
+  id         Int      @id @default(autoincrement())
+  montante   Float
+  frequencia String
+  metodo     String
+  criadoEm   DateTime @default(now())
+  doadorId   Int
+  doador     Doador   @relation(fields: [doadorId], references: [id])
+}
+
+model Informativo {
+  id       Int      @id @default(autoincrement())
+  nome     String
+  email    String   @unique
+  activo   Boolean  @default(true)
+  criadoEm DateTime @default(now())
+}
+
+// --- NOVOS MODELOS PARA O CONTEÚDO DO SITE ---
+
+model Noticia {
+  id            Int      @id @default(autoincrement())
+  titulo        String
+  resumo        String
+  conteudo      String   @db.Text
+  imagem        String?  // URL da imagem
+  categoria     String   // ex: "Mangais", "Limpeza"
+  data          DateTime @default(now())
+  dataFormatada String?  // Opcional, se quiser guardar o texto pronto
+}
+
+model Galeria {
+  id        Int      @id @default(autoincrement())
+  src       String   // URL da imagem
+  legenda   String
+  categoria String   // ex: "Voluntários", "Mangais"
+  criadoEm  DateTime @default(now())
+}
+
+model ArtigoBlog {
+  id            Int      @id @default(autoincrement())
+  titulo        String
+  resumo        String
+  conteudo      String   @db.Text
+  categoria     String
+  tempoLeitura  String
+  imagem        String?
+  criadoEm      DateTime @default(now())
+}
+
+model Projecto {
+  id           Int      @id @default(autoincrement())
+  nome         String
+  descricao    String   @db.Text
+  categoria    String   // "Mangais", "Limpeza", "Capacitação", "Acácias", "Parceria"
+  estado       String   @default("Activo") // "Activo", "Concluído", "Pausado"
+  progresso    Int      @default(0)        // 0 a 100
+  meta         String
+  localizacao  String
+  orcamento    Float?                      // orçamento total (opcional)
+  dataInicio   DateTime @default(now())
+  dataFim      DateTime?
+  criadoEm    DateTime @default(now())
+  actualizadoEm DateTime @updatedAt
+
+  // Relações
+  membrosResponsaveis  ProjectoMembro[]
+  financiadores        ProjectoFinanciador[]
+  parceiros            ProjectoParceiro[]
+}
+
+// ── MEMBRO RESPONSÁVEL PELO PROJECTO ─────────────────────
+model ProjectoMembro {
+  id          Int    @id @default(autoincrement())
+  funcao      String // "Coordenador", "Técnico", "Voluntário Sénior"
+
+  projectoId  Int
+  projecto    Projecto @relation(fields: [projectoId], references: [id], onDelete: Cascade)
+
+  membroId    Int
+  membro      Membro   @relation(fields: [membroId], references: [id], onDelete: Cascade)
+
+  @@unique([projectoId, membroId]) // um membro não pode estar duas vezes no mesmo projecto
+}
+
+// ── FINANCIADOR DO PROJECTO ───────────────────────────────
+model ProjectoFinanciador {
+  id            Int    @id @default(autoincrement())
+  nomeEntidade  String
+  montante      Float?
+  tipoApoio     String // "Financeiro", "Material", "Técnico"
+  contacto      String?
+
+  projectoId    Int
+  projecto      Projecto @relation(fields: [projectoId], references: [id], onDelete: Cascade)
+}
+
+// ── PARCEIRO DO PROJECTO ──────────────────────────────────
+model ProjectoParceiro {
+  id            Int    @id @default(autoincrement())
+  nomeEntidade  String
+  tipoParticipacao String // "ONG", "Governo", "Empresa", "Academia"
+  contacto      String?
+
+  projectoId    Int
+  projecto      Projecto @relation(fields: [projectoId], references: [id], onDelete: Cascade)
+}
+
+

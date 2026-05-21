@@ -1,0 +1,20 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    margin-left: 280px;
+}
+
+.sidebar {
+    width: 280px; /* Largura fixa da sua sidebar */
+    height: 100vh;
+    background-color: #1e2937;
+    flex-shrink: 0; /* Impede a sidebar de "esmagar" */
+}
+
+.dashboard-content {
+    flex: 1; /* Ocupa todo o resto da tela */
+    overflow-y: auto; /* Cria o scroll apenas no conteúdo, não na tela toda */
+    padding: 30px;
+    background-color: #f8fafc;
+}

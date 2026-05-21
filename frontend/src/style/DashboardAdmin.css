@@ -1,0 +1,419 @@
+.admin-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #1e2937;
+  margin-bottom: 8px;
+}
+
+.admin-subtitle {
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.admin-content-area {
+  margin-top: 40px; /* Equivalente ao mt-10 */
+}
+
+/* ════════════════════════════════════════
+   DASHBOARD ADMIN — DashboardAdmin.css
+   Paleta: Verde esmeralda #10b981 / Azul escuro #0f172a
+════════════════════════════════════════ */
+
+/* DashboardAdmin.css — altere apenas esta linha */
+.dashboard-pagina {
+  padding: 24px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+/* ── Cabeçalho ── */
+.dashboard-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dashboard-titulo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.dashboard-subtitulo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.dashboard-cabecalho-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-badge-online {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 20px;
+}
+
+.dashboard-badge-ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  animation: pulsar 2s infinite;
+  display: inline-block;
+}
+
+@keyframes pulsar {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ── Cartões de sumário ── */
+.dashboard-cartoes-grelha {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dashboard-cartao {
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-cartao:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+/* Variantes de cor */
+.cartao-verde  { background-color: #0f172a; }
+.cartao-azul   { background-color: #1e3a5f; }
+.cartao-coral  { background-color: #134e4a; }
+.cartao-amarelo{ background-color: #1c2b1a; }
+
+.dashboard-cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-cartao-icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.dashboard-cartao-variacao {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.dashboard-cartao-variacao.positivo {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.dashboard-cartao-variacao.negativo {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.dashboard-cartao-valor {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 4px 0 0;
+}
+
+.dashboard-cartao-titulo {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Linha central ── */
+.dashboard-linha-central {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── Caixas genéricas (gráfico, projectos, actividade) ── */
+.dashboard-grafico-caixa,
+.dashboard-projectos-caixa,
+.dashboard-actividade-caixa {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-grafico-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dashboard-secao-titulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px;
+}
+
+.dashboard-secao-sub {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.dashboard-secao-icone-decorativo {
+  color: #10b981;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+/* ── Legenda do gráfico ── */
+.dashboard-grafico-legenda {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.legenda-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legenda-doacoes::before    { background-color: #10b981; }
+.legenda-voluntarios::before{ background-color: #3b82f6; }
+
+/* ── Barras do gráfico ── */
+.dashboard-barras {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 180px;
+  gap: 8px;
+  padding-bottom: 4px;
+}
+
+.dashboard-barra-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  height: 100%;
+}
+
+.dashboard-barra-par {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.dashboard-barra {
+  width: 14px;
+  border-radius: 4px 4px 0 0;
+  transition: opacity 0.2s;
+  min-height: 4px;
+  cursor: pointer;
+}
+
+.dashboard-barra:hover { opacity: 0.75; }
+
+.barra-doacoes    { background-color: #10b981; }
+.barra-voluntarios{ background-color: #3b82f6; }
+
+.dashboard-barra-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ── Projectos ── */
+.dashboard-projectos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-projecto-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.dashboard-projecto-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-projecto-nome {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.3;
+  max-width: 80%;
+}
+
+.dashboard-projecto-pct {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #10b981;
+}
+
+.dashboard-barra-progresso-fundo {
+  height: 7px;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard-barra-progresso-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.dashboard-projecto-rodape {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.dashboard-projecto-rodape span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Actividade recente ── */
+.dashboard-actividade-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dashboard-actividade-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.dashboard-actividade-item:last-child {
+  border-bottom: none;
+}
+
+.dashboard-actividade-ponto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ponto-verde   { background-color: #10b981; }
+.ponto-azul    { background-color: #3b82f6; }
+.ponto-coral   { background-color: #f43f5e; }
+.ponto-amarelo { background-color: #f59e0b; }
+
+.dashboard-actividade-texto {
+  flex: 1;
+  font-size: 0.855rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+.dashboard-actividade-tempo {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 1100px) {
+  .dashboard-cartoes-grelha {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-linha-central {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-pagina {
+    padding: 20px 16px;
+  }
+
+  .dashboard-cartoes-grelha {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-titulo {
+    font-size: 1.4rem;
+  }
+}
