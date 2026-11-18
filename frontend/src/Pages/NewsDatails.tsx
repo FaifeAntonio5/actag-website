@@ -9,7 +9,7 @@ const NewsDatails = () => {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/noticias/${id}`)
+    fetch(`/api/noticias/${id}`)
       .then(res => res.json())
       .then(dados => {
         setNoticia(dados);

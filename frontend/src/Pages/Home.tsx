@@ -36,7 +36,7 @@ const Home = () => {
   useEffect(() => {
     const carregarNoticiasHome = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/noticias');
+        const res = await fetch('/api/noticias');
         if (res.ok) {
           const dados = await res.json();
           // Pegamos apenas as 3 primeiras (o backend já envia ordenado por data desc)

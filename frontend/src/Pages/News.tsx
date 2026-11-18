@@ -13,7 +13,7 @@ const News = () => {
     const carregarNoticias = async () => {
       try {
         // Tenta buscar do seu backend real
-        const res = await fetch('http://localhost:3000/api/noticias');
+        const res = await fetch('/api/noticias');
         if (res.ok) {
           const dados = await res.json();
           setNoticias(dados);

@@ -1,5 +1,5 @@
 // src/lib/api.ts
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';
 
 async function pedido(endpoint: string, metodo: string = 'GET', corpo?: object) {
   const token = localStorage.getItem('token');
